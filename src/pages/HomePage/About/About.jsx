@@ -2,7 +2,7 @@ import person from '../../../assets/images/about_us/person.jpg'
 import parts from '../../../assets/images/about_us/parts.jpg'
 const About = () => {
     return (
-        <section className="hero mt-20">
+        <section className="hero mt-20 mb-32">
             <div className="hero-content grid md:grid-cols-2 gap-20">
                 <div className='relative'>
                 <img src={person} className="w-full rounded-lg" />
