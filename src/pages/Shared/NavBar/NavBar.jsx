@@ -27,7 +27,7 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-            <button className="btn btn-outline btn-error">Appointment</button>
+            <button className="my-btn">Appointment</button>
             </div>
         </div>
     );
