@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/logo.svg'
+import logo from '../../../assets/logo-white.png'
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-base-200 text-base-content">
+    <section className='bg-neutral text-neutral-content mt-20'>
+            <footer className="max-w-7xl mx-auto footer p-5 md:p-10 ">
         <div>
         <Link to='/'>
           <img src={logo} alt="" />
@@ -30,6 +31,7 @@ const Footer = () => {
           <a className="link link-hover">Cookie policy</a>
         </div>
       </footer>
+    </section>
     );
 };
 
