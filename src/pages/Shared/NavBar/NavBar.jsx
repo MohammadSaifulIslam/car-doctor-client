@@ -1,10 +1,28 @@
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import logo from '../../../assets/logo.svg'
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import logo from '../../../assets/logo.svg';
 const NavBar = () => {
+    const {user, logOut, loginUser} = useContext(AuthContext)
+
+    const handleLogOut = ()=>{
+        logOut()
+        .then(result =>{})
+        .then(error => console.log(error.message))
+    }
+
+
     const navItem = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink>About</NavLink></li>
         <li><NavLink>Service</NavLink></li>
+        {
+            user?.email && <li><NavLink to='/cart'>My Cart</NavLink></li>
+        }
+        {
+            user?.email ? <li onClick={handleLogOut}><button className='my-btn'>Logout</button></li>
+            : <li><Link to='/login'><button className='my-btn'>Login</button></Link></li>
+        }
     </>
     return (
         <div className="navbar bg-base-100 mb-5">
@@ -22,7 +40,7 @@ const NavBar = () => {
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="flex gap-5">
+                <ul className="flex gap-5 items-center">
                     {navItem}
                 </ul>
             </div>

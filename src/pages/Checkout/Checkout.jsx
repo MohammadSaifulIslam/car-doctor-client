@@ -28,7 +28,7 @@ const Checkout = () => {
     }
     console.log(booking)
 
-    fetch('http://localhost:5000/booking', {
+    fetch('http://localhost:5000/bookings', {
       method: "POST",
       headers: {
         'content-type': 'application/json'
@@ -38,7 +38,7 @@ const Checkout = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data)
-        if(data.insertedId){
+        if (data.insertedId) {
           Swal.fire({
             icon: 'success',
             title: 'Success.',
