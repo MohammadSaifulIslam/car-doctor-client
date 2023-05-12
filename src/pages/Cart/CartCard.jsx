@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const CartCard = ({ booking,handleDeleteService }) => {
+const CartCard = ({ booking,handleDeleteService,handleConfirmStatus }) => {
     const {_id, image, date, service, price } = booking;
 
 
@@ -27,7 +27,10 @@ const CartCard = ({ booking,handleDeleteService }) => {
             </td>
             <td>{price}</td>
             <th>
-                <button className="my-btn">pending</button>
+                {
+                    booking?.status ? <button className='my-btn'>Approved</button> :
+                <button onClick={()=> handleConfirmStatus(_id)} className="my-btn">Confirm</button>
+                }
             </th>
         </tr>
     );
