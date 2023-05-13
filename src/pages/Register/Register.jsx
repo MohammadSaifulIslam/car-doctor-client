@@ -1,7 +1,8 @@
-import React, { useContext, useState } from 'react';
-import img from '../../assets/images/login/login.svg'
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import img from '../../assets/images/login/login.svg';
 
 const Register = () => {
     const {user, createUser} = useContext(AuthContext)
@@ -20,6 +21,12 @@ const Register = () => {
             .then(result => {
                 const createdUser = result.user;
                 console.log({ createdUser })
+                form.reset();
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: 'You successfully register!',
+                  })
             })
             .catch(error => console.log(error))
     }

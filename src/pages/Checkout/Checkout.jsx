@@ -65,6 +65,7 @@ const Checkout = () => {
                   placeholder="Your Name"
                   defaultValue={user?.displayName}
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>
@@ -79,6 +80,7 @@ const Checkout = () => {
                   placeholder="Your Email"
                   defaultValue={user?.email}
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>
@@ -93,6 +95,7 @@ const Checkout = () => {
                   type="date"
                   name="date"
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>
@@ -105,6 +108,7 @@ const Checkout = () => {
                   name="price"
                   defaultValue={'$' + price}
                   className="input input-bordered w-full"
+                  required
                   type="text"
                 />
               </label>
